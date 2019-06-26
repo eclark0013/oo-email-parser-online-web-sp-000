@@ -7,6 +7,10 @@ class EmailParser
 
 attr_accessor :emails
 
+def initialize(emails=nil)
+  @emails=emails
+end
+
 def comma_parse(string)
   string.split(", ")
 end
@@ -15,6 +19,8 @@ def space_parse(string)
   string.split(" ")
 end
 
-def initialize(emails=nil)
-  @emails=emails
+def parse
+  comma_parse(@emails).collect do |comma_chunk|
+    space_parse(comma_chunk)
+  end
 end
