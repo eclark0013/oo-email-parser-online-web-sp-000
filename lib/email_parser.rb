@@ -15,4 +15,6 @@ def space_parse(string)
   string.split(" ")
 end
 
-def parse
+def initialize(emails=nil)
+  @emails=emails
+end
