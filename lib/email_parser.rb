@@ -24,3 +24,5 @@ def parse
     space_parse(comma_chunk)
   end
 end
+
+end
