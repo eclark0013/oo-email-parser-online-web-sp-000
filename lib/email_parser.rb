@@ -19,10 +19,16 @@ def space_parse(string)
   string.split(" ")
 end
 
-def parse
+#parse with repeats
+def parse_rep
   comma_parse(@emails).collect do |comma_chunk|
     space_parse(comma_chunk)
   end.flatten
+end
+
+#parse uniq
+def parse
+  parse_rep.uniq
 end
 
 end
