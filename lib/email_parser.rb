@@ -21,7 +21,7 @@ end
 
 def parse
   comma_parse(@emails).collect do |comma_chunk|
-    space_parse(comma_chunk)
+    space_parse(comma_chunk).flatten
   end
 end
 
